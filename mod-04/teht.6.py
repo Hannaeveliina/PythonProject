@@ -1,24 +1,22 @@
 import random
+import math
+
 N = input("Kuinka monta pistettä arvotaan? ")
 
-if N.isdigit():
-    N = int(N)
-    n = 0 #Ympyrän sisään osuneet pisteet
-    i = 0 # Laskuri, joka laskee montako pistettä on käsitelty
+x = y = 0
+toistojen_maara = 200000
+pareja_arvottu = 0
+sisalla = 0
 
-    while i< N:
-        x = random.uniform(-1,1)
-        y = random.uniform(-1,1)
 
-        if x**2 + y**2 < 1:
-            n += 1
-        i += 1 #Seuraava piste
+while pareja_arvottu < toistojen_maara:
+      x = random.uniform(-1,1)
+      y = random.uniform(-1,1)
+      pareja_arvottu += 1
+      etaisyys = math.pow(x,2) + math.pow(y,2)
+      if etaisyys < 1:
+          sisalla += 1
 
-    pii_likiarvo = 4 * n / N
-    print(f"Piin likiarvo {N} pisteellä on: {pii_likiarvo}")
+simuloitu_pii = 4 * sisalla / toistojen_maara
+print(f"Saatu piin likiarvo: {simuloitu_pii:.3f}")
 
-elif not N.isdigit():
-    print("Virheellinen syöte. Anna kokonaisluku.")
-
-else:
-    print("Jotain meni pieleen.")
