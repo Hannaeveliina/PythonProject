@@ -6,6 +6,7 @@ while syote !="":
     luvut.append(luku)
     syote = input("Anna luku: ")
 
+
 luvut.sort(reverse=True)
 
 print("Viisi suurinta lukua:")

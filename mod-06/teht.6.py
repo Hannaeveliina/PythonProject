@@ -21,7 +21,7 @@ print(f"Toisen pizzan yksikköhinta: {hinta2:.2f} €/m2")
 
 if hinta1 < hinta2:
     print("Ensimmäinen pizza antaa paremman vastineen rahalle.")
-elif  hinta2 < hinta1:
+elif  hinta2 <  hinta1:
     print("Toinen pizza antaa paremman vastineen rahalle.")
 else:
     print("Molemmilla pizzoilla on sama yksikköhinta.")
