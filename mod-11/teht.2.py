@@ -6,7 +6,6 @@ class Auto:
         self.kuljettu_matka = 0
 
     def kiihdytä(self, nopeus):
-        # asetetaan haluttu nopeus, ei yli huippunopeuden eikä alle 0
         if nopeus > self.huippunopeus:
             self.nopeus = self.huippunopeus
         elif nopeus < 0:
