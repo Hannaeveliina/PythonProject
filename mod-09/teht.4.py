@@ -36,6 +36,8 @@ while kilpailu_kaynnissa:
         if auto.kuljettu_matka >= 10000:
             kilpailu_kaynnissa = False
 
+autot.sort(key=lambda car: car.kuljettu_matka, reverse = True)
+
 print(f"\nKilpailu päättyi {tunti} tunnin jälkeen!\n")
 print("Rekisteri | Huippunopeus | Nopeus | Kuljettu matka")
 print("---------------------------------------------------")

@@ -1,4 +1,5 @@
 import random
+from tabulate import tabulate
 
 class Auto:
     def __init__(self, rekisteritunnus, huippunopeus):
@@ -31,11 +32,12 @@ class Kilpailu:
             auto.kulje(1)
 
     def tulosta_tilanne(self):
-        print(f"\nKilpailu: {self.nimi}")
-        print("Rekisteri | Huippu | Nopeus | Matka")
-        print("------------------------------------")
+        self.autot.sort(key=lambda car: car.kuljettu_matka, reverse=True)
+        tulostettavat = []
         for auto in self.autot:
-            print(f"{auto.rekisteritunnus:9} {auto.huippunopeus:6} {auto.nopeus:7} {auto.kuljettu_matka:8.1f}")
+                tulostettavat.append([auto.rekisteritunnus, auto.huippunopeus,auto.nopeus, auto.kuljettu_matka])
+
+        print(tabulate(tulostettavat,["Rekisteritunnus", "Huippunopeus", "Nopeus", "Matka"]))
 
     def kilpailu_ohi(self):
         for auto in self.autot:
