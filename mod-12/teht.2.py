@@ -1,17 +1,17 @@
 import requests
 
-def hae_saa(paikkakunta, api_key):
+def hae_saa(paikkakunta, api_avain):
     url = "https://api.openweathermap.org/data/2.5/weather"
     parametrit = {
         "q": paikkakunta,
-        "appid": api_key,
+        "appid": api_avain,
         "units": "metric",
         "lang": "fi"
     }
 
     vastaus = requests.get(url, params=parametrit)
     if vastaus.status_code != 200:
-        print("Virhe:", vastaus.json().get("message", "Tuntematon virhe"))
+        print("Virhe:", vastaus.json().get("viesti", "Tuntematon virhe"))
         return
 
     data = vastaus.json()
