@@ -2,7 +2,7 @@ class Hissi:
     def __init__(self, alin, ylin):
         self.alin = alin
         self.ylin = ylin
-        self.nykyinen_kerros = alin  # Hissi alkaa alimmasta kerroksesta
+        self.nykyinen_kerros = alin
 
     def kerros_ylös(self):
         if self.nykyinen_kerros < self.ylin:
