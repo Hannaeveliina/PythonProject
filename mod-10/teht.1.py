@@ -19,7 +19,12 @@ class Hissi:
             print("Hissi on jo alimmassa kerroksessa!")
 
     def siirry_kerrokseen(self, kerros):
+        if self.nykyinen_kerros == kerros:
+            print("Hissi on jo tässä kerroksessa!")
+            return
+
         print(f"Siirretään hissi kerrokseen {kerros}...")
+
         while self.nykyinen_kerros < kerros:
             self.kerros_ylös()
         while self.nykyinen_kerros > kerros:
@@ -29,3 +34,4 @@ class Hissi:
 h = Hissi(1, 10)
 h.siirry_kerrokseen(5)
 h.siirry_kerrokseen(1)
+

@@ -27,7 +27,7 @@ class Kilpailu:
 
     def tunti_kuluu(self):
         for auto in self.autot:
-            muutos = random.randint(-10, 15)  # nopeuden muutos
+            muutos = random.randint(-10, 15)
             auto.kiihdytä(muutos)
             auto.kulje(1)
 
@@ -35,7 +35,7 @@ class Kilpailu:
         self.autot.sort(key=lambda car: car.kuljettu_matka, reverse=True)
         tulostettavat = []
         for auto in self.autot:
-                tulostettavat.append([auto.rekisteritunnus, auto.huippunopeus,auto.nopeus, auto.kuljettu_matka])
+                tulostettavat.append([auto.rekisteritunnus, auto.huippunopeus, auto.nopeus, auto.kuljettu_matka])
 
         print(tabulate(tulostettavat,["Rekisteritunnus", "Huippunopeus", "Nopeus", "Matka"]))
 

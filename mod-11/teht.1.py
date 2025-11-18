@@ -12,7 +12,7 @@ class Kirja(Julkaisu):
         print(f"Kirja: {self.nimi}")
         print(f"Kirjoittaja: {self.kirjoittaja}")
         print(f"Sivuja: {self.sivumaara}")
-        print()
+
 
 
 class Lehti(Julkaisu):
@@ -23,7 +23,7 @@ class Lehti(Julkaisu):
     def tulosta_tiedot(self):
         print(f"Lehti: {self.nimi}")
         print(f"Päätoimittaja: {self.paatoimittaja}")
-        print()
+
 
 
 aku_ankka = Lehti("Aku Ankka", "Aki Hyyppä")
